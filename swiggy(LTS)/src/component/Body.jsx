@@ -1,9 +1,13 @@
-
+import CardContainer from '../component/CardContainer'
 
 
 const Body = () =>{
     return(
-        <div>I am Body component.</div>
+        <div className='h-min'>
+            
+            <CardContainer/>
+
+        </div>
     )
 }
 
