@@ -1,5 +1,6 @@
 import GooglePlay from '../assets/google-play.png'
 import AppStore from '../assets/app-store.png'
+import Logo from '../assets/logo.jpg'
 
 const Footer = () =>{
     return(
@@ -11,6 +12,10 @@ const Footer = () =>{
                 <img src={AppStore} className="w-52"/>
             </div>
             <div className='flex mx-52 py-10 justify-between'>
+                <div className='flex gap-2'>
+                    <img src={Logo} className="w-10 h-10 rounded"/>
+                    <span className='text-2xl font-bold text-orange-500'>Swiggy(LTS)</span>
+                </div>
                 <div>
                     <ul className='flex flex-col gap-3 '>
                         <li className='font-semibold text-lg'>Company</li>
@@ -24,12 +29,19 @@ const Footer = () =>{
                         <li>Swiggy Genie</li>
                     </ul>
                 </div>
-                <div>
+                <div className='flex flex-col gap-28'>
                     <ul className='flex flex-col gap-3 '>
                         <li className='font-semibold text-lg'>Contact us</li>
                         <li>Help & Support</li>
                         <li>Partner with us</li>
                         <li>Ride with us</li>
+                    </ul>
+                    <ul className='flex flex-col gap-3 '>
+                        <li className='font-semibold text-lg'>Legal</li>
+                        <li>Terms & Conditions</li>
+                        <li>Cookie Policy</li>
+                        <li>Privacy Policy</li>
+                        <li>Investor Relations</li>
                     </ul>
                 </div>
                 <div>
@@ -43,13 +55,23 @@ const Footer = () =>{
                         <li>Pune</li>
                     </ul>
                 </div>
-                <div>
+                <div className='flex flex-col gap-16'>
                     <ul className='flex flex-col gap-3 '>
                         <li className='font-semibold text-lg'>Life at Swiggy</li>
                         <li>Explore with Swiggy</li>
                         <li>Swiggy News</li>
                         <li>Snackables</li>
                     </ul>
+                    <div>
+                    <h2 className='font-semibold text-lg'>Life at Swiggy</h2>
+                        <ul className='flex gap-3 my-3'>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-pinterest"></i></a> 
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

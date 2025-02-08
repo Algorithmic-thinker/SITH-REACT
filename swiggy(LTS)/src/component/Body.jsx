@@ -3,7 +3,7 @@ import CardContainer from '../component/CardContainer'
 
 const Body = () =>{
     return(
-        <div className='h-min'>
+        <div className='mx-36'>
             
             <CardContainer/>
 

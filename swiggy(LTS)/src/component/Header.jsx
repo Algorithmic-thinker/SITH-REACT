@@ -3,18 +3,20 @@ import Logo from '../assets/logo.jpg'
 
 const Header = () =>{
     return(
-        <div className="flex justify-between items-center px-8 py-4 shadow-lg">
+        <div className="flex justify-around items-center px-8 py-4 shadow-lg">
 
-            <a className="cursor-pointer" href="#">
+            <a className="flex gap-14 cursor-pointer items-center" href="#">
                 <img src={Logo} className="w-10 rounded-md"/>
-                <span className='text-2xl font-bold'>Swiggy(LTS)</span>
+                <p className='underline underline-offset-8 font-semibold'>Other <i class="fa-solid fa-chevron-down text-orange-500"></i></p>
             </a>
 
-            <div className="flex gap-6">
-                <a className="cursor-pointer" href="#"><i className="fa-solid fa-house"></i>Home</a>
-                <a className="cursor-pointer" href="#"><i className="fa-solid fa-users"></i>About Us</a>
-                <a className="cursor-pointer" href="#"><i className="fa-solid fa-phone"></i>Contact Us</a>
-                <a className="cursor-pointer" href="#"><i className="fa-solid fa-cart-shopping"></i>Cart</a>  
+            <div className="flex gap-14">
+                <a className="cursor-pointer hover:text-orange-500" href="#"><i class="fa-solid fa-laptop"></i> Swiggy corporate</a>
+                <a className="cursor-pointer hover:text-orange-500" href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+                <a className="cursor-pointer hover:text-orange-500" href="#"><i class="fa-solid fa-percent"></i>Offer</a>
+                <a className="cursor-pointer hover:text-orange-500" href="#"><i class="fa-regular fa-life-ring"></i>Help</a>  
+                <a className="cursor-pointer hover:text-orange-500" href="#"><i class="fa-regular fa-user"></i>Sign in</a>  
+                <a className="cursor-pointer hover:text-orange-500" href="#"><i className="fa-solid fa-cart-shopping"></i>Cart</a>  
             </div>
 
         </div>

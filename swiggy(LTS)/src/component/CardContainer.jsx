@@ -2,7 +2,7 @@ import RestaurantCard from '../component/RestaurantCard'
 
 const CardContainer = () => {
     return(
-        <div className=' flex gap-4 flex-wrap px-4 py-4'>
+        <div className=' flex justify-between flex-wrap py-4'>
             <RestaurantCard/>
             <RestaurantCard/>
             <RestaurantCard/>
