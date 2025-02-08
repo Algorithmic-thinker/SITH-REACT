@@ -1,6 +1,6 @@
 
 
-const RestaurantCard = ({name, rating, deliveryTIme, cuisines, location}) =>{
+const RestaurantCard = ({name, rating, deliveryTime, cuisines, location}) =>{
     return(
         <div className=" w-1/4 my-5 ">
             <div className="w-full md:max-w-[250px] max-w-[300px] h-[150px]">
