@@ -65,11 +65,11 @@ const Footer = () =>{
                     <div>
                     <h2 className='font-semibold text-lg'>Life at Swiggy</h2>
                         <ul className='flex gap-3 my-3'>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fa-brands fa-pinterest"></i></a> 
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i className="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i className="fa-brands fa-pinterest"></i></a> 
+                            <a href="#"><i className="fa-brands fa-twitter"></i></a>
                         </ul>
                     </div>
                 </div>
