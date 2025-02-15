@@ -63,3 +63,5 @@ export const restaurantData = [
         location: "San Diego, CA"
       }
 ];
+
+export const API_URL = 'https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.07480&lng=72.88560&carousel=true&third_party_vendor=1';

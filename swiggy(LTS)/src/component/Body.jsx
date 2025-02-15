@@ -3,7 +3,7 @@ import CardContainer from '../component/CardContainer'
 
 const Body = () =>{
     return(
-        <div className='mx-36'>
+        <div className='md:px-36 w-full'>
             
             <CardContainer/>
 
