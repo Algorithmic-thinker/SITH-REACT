@@ -14,10 +14,10 @@ const CardContainer = () => {
     setRestaurantList(filteredRestaurantData);
 
     const getRestaurantData = async() => {
-      const data = await fetch(API_URL);
-      const json = await data.json();
-      console.log("carousel data", json.data);
-    }
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      console.log("carousel data", data);
+    };
 
     getRestaurantData();
   }

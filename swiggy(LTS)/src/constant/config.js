@@ -64,4 +64,4 @@ export const restaurantData = [
       }
 ];
 
-export const API_URL = 'https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.07480&lng=72.88560&carousel=true&third_party_vendor=1';
+export const API_URL = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
