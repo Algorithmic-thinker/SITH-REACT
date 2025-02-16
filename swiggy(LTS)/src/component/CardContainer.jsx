@@ -1,26 +1,33 @@
 import RestaurantCard from '../component/RestaurantCard'
-import {restaurantData, API_URL} from '../constant/config.js'
+import { API_URL} from '../constant/config.js'
 import { useState, useEffect } from 'react'
 
 const CardContainer = () => {
-    const [restaurantList , setRestaurantList] = useState(restaurantData);
+    const [restaurantList , setRestaurantList] = useState([]);
 
     function filter(){
 
     const filteredRestaurantData = restaurantList.filter((restaurant)=>
-      restaurant.rating >= 4.5
+      restaurant.info.avgRating >= 4.5
     );
      
     setRestaurantList(filteredRestaurantData);
 
+  }
+
+  useEffect(() =>{
     const getRestaurantData = async() => {
       const response = await fetch(API_URL);
       const data = await response.json();
-      console.log("carousel data", data);
+      console.log("data",data);
+      // console.log("carousel data", data.data.cards[0].card.card.gridElements.infoWithStyle.info);
+      console.log("restaurant data", data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+      setRestaurantList(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     };
-
+  
     getRestaurantData();
-  }
+  },[])
+  
 
     return(
       <>
@@ -30,7 +37,7 @@ const CardContainer = () => {
                 restaurantList.map((restaurant) =>{
                    return( 
                    <RestaurantCard
-                        {...restaurant}
+                        {...restaurant.info}
                     />
                    )
                 })
