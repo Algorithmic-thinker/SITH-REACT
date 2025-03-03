@@ -6,6 +6,7 @@ import { BAD_REQUEST_URL } from '../constant/config.js'
 import { FORBIDDEN_URL } from '../constant/config.js'
 import { UNAUTHORIZED_URL } from '../constant/config.js'
 import { NOTFOUND_URL } from '../constant/config.js'
+import CarouselCard from '../component/CarouselCard.jsx'
 
 
 const CardContainer = () => {
@@ -13,6 +14,7 @@ const CardContainer = () => {
   const [errorImage , setErrorImage] = useState("");
   const [searchText , setSearchText] = useState("");
   const [masterList , setMasterList] = useState([]);
+  const [carouselList , setCarouselList] = useState([]);
   
   const handleSearchText = (text) =>{
     setSearchText(text);
@@ -61,6 +63,7 @@ const CardContainer = () => {
           console.log("restaurant data", data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
           setRestaurantList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
           setMasterList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+          setCarouselList(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
         }
         else if(response.status === 400){
           setErrorImage(BAD_REQUEST_URL);
@@ -111,6 +114,20 @@ const CardContainer = () => {
           <button className="bg-gray-300 hover:bg-gray-400 border border-black  h-full p-2" onClick={handleBuget}>Buget friendly</button>
         </div>
 
+      </div>
+
+      <div className='w-full h-[20rem] overflow-x-auto scrollbar'>
+        <div className='w-[400%]'>
+          {
+          carouselList.map((carousel)=>{
+          return(
+          <CarouselCard
+            {...carousel}
+          />
+          )
+          })
+          }
+        </div>
       </div>
 
       <div className='flex justify-start flex-wrap gap-2 py-4'>
