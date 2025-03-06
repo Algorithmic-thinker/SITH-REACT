@@ -2,9 +2,9 @@
 
 const ShimmerCard = () =>{
     return(
-        new Array(20).fill(0).map(()=>{
+        new Array(20).fill(0).map((card, index)=>{
             return (
-                <div className="xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full h-max my-5 shadow-lg shadow-slate-300 p-2">
+                <div className="xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full h-max my-5 shadow-lg shadow-slate-300 p-2" key={index}>
                     <div className="max-w-full px-1 h-[150px] w-full bg-[#e7e7e7]">
                     </div>
                     <div className="px-2 mt-2">
