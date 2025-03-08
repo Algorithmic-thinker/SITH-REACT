@@ -4,6 +4,7 @@ import ShimmerCard from '../component/ShimmerCard.jsx'
 import CarouselCard from '../component/CarouselCard.jsx'
 import useRestaurant from '../utils/useRestaurant.js'
 import Searchbar from './Searchbar.jsx'
+import ShimerCarousel from './ShimerCarousel.jsx'
 
 
 const CardContainer = () => {
@@ -11,31 +12,36 @@ const CardContainer = () => {
   const [searchText , setSearchText] = useState("");
   const restaurantData = useRestaurant();
  const {restaurantList, masterList, carouselList, errorImage, updateRestaurantList} = restaurantData;
+  const [scroll, setScroll] = useState(0);
   
-  
+  useEffect(()=>{
 
-  const moveLeft = (e) =>{
-    var element = document.getElementById("scrollbar");
-    element.scrollLeft -= 150;
-    if(element.scrollLeft === 0 ){
-      e.target.style.color = "gray";
+    const scrollElement = document.getElementById("scrollbar");
+
+    if(scrollElement.scrollLeft === 0 ){
+      document.querySelector('.fa-circle-left').style.color = "gray";
     }
     else{
-      e.target.style.color = "black";
+      document.querySelector('.fa-circle-left').style.color = "black";
     }
-    e.target.nextSibling.style.color = "black";
+
+    if(Math.ceil(scrollElement.scrollLeft) === scrollElement.scrollWidth - scrollElement.clientWidth || Math.floor(scrollElement.scrollLeft) === scrollElement.scrollWidth - scrollElement.clientWidth ){
+      document.querySelector('.fa-circle-right').style.color = "gray";
+    }
+    else{
+      document.querySelector('.fa-circle-right').style.color = "black";
+    }
+
+  },[scroll]);
+
+  const moveLeft = (e) =>{
+    const scrollElement = document.getElementById("scrollbar");
+    scrollElement.scrollLeft -= 150; 
   }
 
   const moveRight = (e) =>{
-    var element = document.getElementById("scrollbar");
-    element.scrollLeft += 150;
-    if(Math.ceil(element.scrollLeft) === element.scrollWidth - element.clientWidth ){
-      e.target.style.color = "gray";
-    }
-    else{
-      e.target.style.color = "black";
-    }
-    e.target.previousSibling.style.color = "black";
+    const scrollElement = document.getElementById("scrollbar");
+    scrollElement.scrollLeft += 150;
   }
 
   const resetRestaurantList = () =>{
@@ -90,9 +96,9 @@ const CardContainer = () => {
           </div>
         </div>
 
-        <div className='w-full h-[13rem] overflow-x-auto ' id='scrollbar'>
+        <div className='w-full h-[13rem] overflow-x-auto ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
           <div className='w-[200%] flex flex-row'>
-            {
+            { carouselList.length === 0  ? <ShimerCarousel/> :
             carouselList.map((carousel)=>{
             return(
             <CarouselCard
@@ -113,15 +119,12 @@ const CardContainer = () => {
       
         <Searchbar searchText = {searchText} setSearchText = {setSearchText} masterList = {masterList} updateRestaurantList = {updateRestaurantList} />
 
-        <div className='mx-5 my-5'>
-        <button className="bg-gray-300 hover:bg-gray-400 border border-black  h-full p-2" onClick={resetRestaurantList}>Show All</button>
-        </div>
-
-        <div className='mx-5 my-5  w-1/3 flex justify-between gap-2'>
+        <div className='mx-5 my-5 max-w-xl flex justify-between gap-4 flex-wrap'>
           <h2 className='text-2xl underline underline-offset-[0.5rem]'>Filters: </h2>
-          <button className="bg-gray-300 hover:bg-gray-400 border border-black  h-full p-2" onClick={handleRatting}>TOP RATED</button>
-          <button className="bg-gray-300 hover:bg-gray-400 border border-black  h-full p-2" onClick={handleVeg}>Pure Veg</button>
-          <button className="bg-gray-300 hover:bg-gray-400 border border-black  h-full p-2" onClick={handleBuget}>Buget friendly</button>
+          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={handleRatting}>TOP RATED</button>
+          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={handleVeg}>Pure Veg</button>
+          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={handleBuget}>Buget friendly</button>
+          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={resetRestaurantList}>Show All</button>
         </div>
 
       </div>

@@ -6,14 +6,14 @@ const Footer = () =>{
     return(
         <div className='bg-gray-300 mt-20'>
             <hr className='w-1/2 h-0.5 mx-auto bg-slate-950'/>
-            <div className="flex md:flex-row flex-col md:mx-52 gap-5 py-10">
+            <div className="flex md:flex-row flex-col lg:mx-40  xl:mx-52 md:mx-32 gap-5 py-10 flex-wrap">
                 <span className='font-bold text-xl'>For better experience,download the Swiggy app now.</span>
                 <img src={GooglePlay} className="w-52"/>
                 <img src={AppStore} className="w-52"/>
             </div>
-            <div className='flex md:flex-row flex-col md:mx-52 py-10 justify-between'>
+            <div className='flex md:flex-row flex-col lg:mx-40  xl:mx-52 md:mx-32 py-10 justify-between gap-2'>
                 <div className='flex gap-2'>
-                    <img src={Logo} className="w-10 h-10 rounded"/>
+                    <img src={Logo} className="max-w-10 max-h-10 rounded"/>
                     <span className='text-2xl font-bold text-orange-500'>Swiggy(LTS)</span>
                 </div>
                 <div>

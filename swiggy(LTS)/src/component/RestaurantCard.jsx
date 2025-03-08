@@ -2,9 +2,9 @@ import {IMG_URL} from '../constant/config.js'
 
 const RestaurantCard = ({name, avgRating, sla, cuisines, areaName, cloudinaryImageId}) =>{
     return(
-        <div className=" xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full my-5 ">
-            <div className="max-w-full px-1 h-[150px]">
-                <img className="h-full w-full object-cover rounded-[15px]" src={IMG_URL + cloudinaryImageId}/>
+        <div className=" xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full my-5 hover:scale-95">
+            <div className="max-w-full px-1 h-[200px]">
+                <img className="h-full w-full object-cover object-center rounded-[15px]" src={IMG_URL + cloudinaryImageId}/>
             </div>
             <div className="px-2">
                 <h2 className="font-semibold text-2xl">{name}</h2>
