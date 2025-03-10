@@ -22,14 +22,14 @@ const CardContainer = () => {
       document.querySelector('.fa-circle-left').style.color = "gray";
     }
     else{
-      document.querySelector('.fa-circle-left').style.color = "black";
+      document.querySelector('.fa-circle-left').style.color = "#252525";
     }
 
     if(Math.ceil(scrollElement.scrollLeft) === scrollElement.scrollWidth - scrollElement.clientWidth || Math.floor(scrollElement.scrollLeft) === scrollElement.scrollWidth - scrollElement.clientWidth ){
       document.querySelector('.fa-circle-right').style.color = "gray";
     }
     else{
-      document.querySelector('.fa-circle-right').style.color = "black";
+      document.querySelector('.fa-circle-right').style.color = "#252525";
     }
 
   },[scroll]);
@@ -74,7 +74,6 @@ const CardContainer = () => {
     updateRestaurantList(filteredRestaurantData);
   }
 
-  
   if(errorImage){
       return(
         <div className='max-w-[50rem] my-20'>
@@ -89,14 +88,14 @@ const CardContainer = () => {
       <div className='w-full my-5'>
 
         <div className='flex justify-between my-2'>
-          <h1 className='text-4xl font-bold'>What's on your mind?</h1>
+          <h1 className='text-4xl font-semibold text-[#252525]'>What's on your mind?</h1>
           <div className='flex text-4xl gap-3'>
-            <i className="fa-regular fa-circle-left text-gray-500" onClick={(e) => moveLeft(e)}></i>
-            <i className="fa-regular fa-circle-right" onClick={(e) => moveRight(e)}></i>
+            <i className="fa-regular fa-circle-left text-gray-500 " onClick={(e) => moveLeft(e)}></i>
+            <i className="fa-regular fa-circle-right text-[#252525]" onClick={(e) => moveRight(e)}></i>
           </div>
         </div>
 
-        <div className='w-full h-[13rem] overflow-x-auto ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
+        <div className='w-full h-[13rem] overflow-x-auto scroll-smooth ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
           <div className='w-[200%] flex flex-row'>
             { carouselList.length === 0  ? <ShimerCarousel/> :
             carouselList.map((carousel)=>{
@@ -114,17 +113,17 @@ const CardContainer = () => {
       </div>
 
 
-      <h1 className='text-4xl my-4'>Restaurant List</h1>
+      <h1 className='text-4xl my-4 font-semibold text-[#252525]'>Restaurant List</h1>
       <div className='flex justify-between flex-wrap'>
       
         <Searchbar searchText = {searchText} setSearchText = {setSearchText} masterList = {masterList} updateRestaurantList = {updateRestaurantList} />
 
         <div className='mx-5 my-5 max-w-xl flex justify-between gap-4 flex-wrap'>
           <h2 className='text-2xl underline underline-offset-[0.5rem]'>Filters: </h2>
-          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={handleRatting}>TOP RATED</button>
-          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={handleVeg}>Pure Veg</button>
-          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={handleBuget}>Buget friendly</button>
-          <button className="bg-gray-300 hover:bg-gray-400 border border-black   p-2" onClick={resetRestaurantList}>Show All</button>
+          <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525] rounded-full  p-2" onClick={handleRatting}>TOP RATED</button>
+          <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525]  rounded-full p-2" onClick={handleVeg}>Pure Veg</button>
+          <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525] rounded-full  p-2" onClick={handleBuget}>Buget friendly</button>
+          <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525]  rounded-full p-2" onClick={resetRestaurantList}>Show All</button>
         </div>
 
       </div>

@@ -9,7 +9,7 @@ const RestaurantCard = ({name, avgRating, sla, cuisines, areaName, cloudinaryIma
             <div className="px-2">
                 <h2 className="font-semibold text-2xl">{name}</h2>
                 <div className="flex gap-2">
-                    <h2><i className="fa-solid fa-star text-[16px] text-green-600"></i>{avgRating}</h2>
+                    <h2><i className="fa-solid fa-star text-[14px] text-white border border-transparent rounded-full p-1 bg-green-600 me-1"></i>{avgRating}</h2>
                     <h2 className="text-[16px] ">{sla?.deliveryTime} min</h2>
                 </div>
             </div>
