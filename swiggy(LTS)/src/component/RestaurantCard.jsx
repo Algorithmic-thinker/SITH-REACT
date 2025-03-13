@@ -1,8 +1,10 @@
 import {IMG_URL} from '../constant/config.js'
+import { Link } from 'react-router'
 
-const RestaurantCard = ({name, avgRating, sla, cuisines, areaName, cloudinaryImageId}) =>{
+const RestaurantCard = ({name, avgRating, sla, cuisines, areaName, cloudinaryImageId, id}) =>{
     return(
-        <div className=" xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full my-5 hover:scale-95">
+
+        <Link to={`menu/${name}/${id}`.toLowerCase().replace(/\s+/g, '-')} className=" xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full my-5 hover:scale-95">
             <div className="max-w-full px-1 h-[200px]">
                 <img className="h-full w-full object-cover object-center rounded-[15px]" src={IMG_URL + cloudinaryImageId}/>
             </div>
@@ -15,7 +17,7 @@ const RestaurantCard = ({name, avgRating, sla, cuisines, areaName, cloudinaryIma
             </div>
             <p className="text-gray-500 px-3">{cuisines.join(", ")}</p>
             <p className="text-gray-500 px-3">{areaName}</p>
-        </div>
+        </Link>
     )
 }
 

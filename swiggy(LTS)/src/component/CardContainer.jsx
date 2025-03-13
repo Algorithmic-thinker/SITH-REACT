@@ -7,7 +7,7 @@ import Searchbar from './Searchbar.jsx'
 import ShimerCarousel from './ShimerCarousel.jsx'
 
 
-const CardContainer = () => {
+const CardContainer = ({ searchInputRef }) => {
 
   const [searchText , setSearchText] = useState("");
   const restaurantData = useRestaurant();
@@ -96,7 +96,7 @@ const CardContainer = () => {
         </div>
 
         <div className='w-full h-[13rem] overflow-x-auto scroll-smooth ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
-          <div className='w-[200%] flex flex-row'>
+          <div className='w-[200%] flex flex-row gap-2'>
             { carouselList.length === 0  ? <ShimerCarousel/> :
             carouselList.map((carousel)=>{
             return(
@@ -116,7 +116,7 @@ const CardContainer = () => {
       <h1 className='text-4xl my-4 font-semibold text-[#252525]'>Restaurant List</h1>
       <div className='flex justify-between flex-wrap'>
       
-        <Searchbar searchText = {searchText} setSearchText = {setSearchText} masterList = {masterList} updateRestaurantList = {updateRestaurantList} />
+        <Searchbar searchText = {searchText} setSearchText = {setSearchText} masterList = {masterList} updateRestaurantList = {updateRestaurantList} searchInputRef={searchInputRef} />
 
         <div className='mx-5 my-5 max-w-xl flex justify-between gap-4 flex-wrap'>
           <h2 className='text-2xl underline underline-offset-[0.5rem]'>Filters: </h2>

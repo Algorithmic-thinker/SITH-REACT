@@ -9,3 +9,7 @@ export const BAD_REQUEST_URL = "https://www.elegantthemes.com/blog/wp-content/up
 export const UNAUTHORIZED_URL ="https://www.elegantthemes.com/blog/wp-content/uploads/2019/12/401-error-wordpress-featured-image.jpg";
 export const FORBIDDEN_URL ="https://miro.medium.com/v2/resize:fit:1200/1*MIrLuyiCDpdNbnFYxYlKtA.png";
 export const NOTFOUND_URL ="https://blog.thomasnet.com/hubfs/shutterstock_774749455.jpg";
+
+export const createMenuUrl = (id) =>{
+    return(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07480&lng=72.88560&restaurantId=${id}&submitAction=ENTER`)
+}
