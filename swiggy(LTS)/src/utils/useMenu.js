@@ -14,7 +14,7 @@ const useMenu = (id) =>{
         console.log("menu data", data);
 
         setMenuName(data?.data?.cards[0]?.card?.card?.text);
-        console.log("name", menuName);
+        console.log("name", data?.data?.cards[0]?.card?.card?.text);
 
         console.log("rating",data?.data?.cards[2]?.card?.card?.info?.avgRating);
         console.log("number of Rating",data?.data?.cards[2]?.card?.card?.info?.totalRatingsString);

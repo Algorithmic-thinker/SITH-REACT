@@ -4,6 +4,7 @@ import { FORBIDDEN_URL } from '../constant/config.js'
 import { UNAUTHORIZED_URL } from '../constant/config.js'
 import { NOTFOUND_URL } from '../constant/config.js'
 import { API_URL} from '../constant/config.js'
+import { MOBILE_API_URL } from '../constant/config.js'
 
 const useRestaurant = () =>{
 
@@ -14,7 +15,15 @@ const useRestaurant = () =>{
 
      useEffect(() =>{
         const getRestaurantData = async() => {
-          const response = await fetch(API_URL);
+
+          let apiUrl = "";
+          if (window.matchMedia("(min-width: 480px)").matches) {
+            apiUrl = API_URL;
+          } else {
+            apiUrl = MOBILE_API_URL;
+          }
+
+          const response = await fetch(apiUrl);
           try{
             console.log("response", response);
             if(response.ok){

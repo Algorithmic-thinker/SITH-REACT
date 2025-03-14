@@ -13,3 +13,5 @@ export const NOTFOUND_URL ="https://blog.thomasnet.com/hubfs/shutterstock_774749
 export const createMenuUrl = (id) =>{
     return(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07480&lng=72.88560&restaurantId=${id}&submitAction=ENTER`)
 }
+
+export const MOBILE_API_URL = 'https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.07480&lng=72.88560&carousel=true&third_party_vendor=1'
