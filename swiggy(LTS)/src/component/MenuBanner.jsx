@@ -3,7 +3,7 @@
 const MenuBanner = ({menuName}) =>{
     return(
         <>
-            <h1 className="text-2xl font-bold text-center">{menuName}</h1>
+            <h1 className="text-2xl font-bold py-6">{menuName}</h1>
         </>
     )
 }

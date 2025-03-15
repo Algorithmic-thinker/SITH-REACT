@@ -118,7 +118,7 @@ const CardContainer = ({ searchInputRef }) => {
       
         <Searchbar searchText = {searchText} setSearchText = {setSearchText} masterList = {masterList} updateRestaurantList = {updateRestaurantList} searchInputRef={searchInputRef} />
 
-        <div className='mx-5 my-5 max-w-xl flex justify-between gap-4 flex-wrap'>
+        <div className='mx-5 my-5 max-w-xl flex justify-start gap-4 flex-wrap'>
           <h2 className='text-2xl underline underline-offset-[0.5rem]'>Filters: </h2>
           <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525] rounded-full  p-2" onClick={handleRatting}>TOP RATED</button>
           <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525]  rounded-full p-2" onClick={handleVeg}>Pure Veg</button>

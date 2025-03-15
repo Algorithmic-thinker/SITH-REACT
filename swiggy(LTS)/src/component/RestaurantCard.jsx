@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 const RestaurantCard = ({name, avgRating, sla, cuisines, areaName, cloudinaryImageId, id}) =>{
     return(
 
-        <Link to={`menu/${name}/${id}`.toLowerCase().replace(/\s+/g, '-')} className=" xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full my-5 hover:scale-95">
+        <Link to={`menu/${name}/${id}`.toLowerCase().replace(/\s+/g, '-')} className=" xl:w-[24%] lg:w-[32%] md:w-[49%] sm:w-[99%] w-full my-5 hover:scale-95 transition-transform duration-1000">
             <div className="max-w-full px-1 h-[200px]">
                 <img className="h-full w-full object-cover object-center rounded-[15px]" src={IMG_URL + cloudinaryImageId}/>
             </div>

@@ -29,7 +29,7 @@ const Footer = () =>{
                         <li>Swiggy Genie</li>
                     </ul>
                 </div>
-                <div className='flex flex-col gap-28'>
+                <div className='flex md:flex-col  md:py-0 py-4 gap-28'>
                     <ul className='flex flex-col gap-3 '>
                         <li className='font-semibold text-lg'>Contact us</li>
                         <li>Help & Support</li>
@@ -55,7 +55,7 @@ const Footer = () =>{
                         <li>Pune</li>
                     </ul>
                 </div>
-                <div className='flex flex-col gap-16'>
+                <div className='flex md:flex-col md:py-0 py-2 gap-16'>
                     <ul className='flex flex-col gap-3 '>
                         <li className='font-semibold text-lg'>Life at Swiggy</li>
                         <li>Explore with Swiggy</li>
@@ -63,7 +63,7 @@ const Footer = () =>{
                         <li>Snackables</li>
                     </ul>
                     <div>
-                    <h2 className='font-semibold text-lg'>Life at Swiggy</h2>
+                        <h2 className='font-semibold text-lg'>Social Links</h2>
                         <ul className='flex gap-3 my-3'>
                             <a href="#"><i className="fa-brands fa-linkedin"></i></a>
                             <a href="#"><i className="fa-brands fa-instagram"></i></a>
