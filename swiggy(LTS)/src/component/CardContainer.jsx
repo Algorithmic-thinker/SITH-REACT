@@ -95,8 +95,8 @@ const CardContainer = ({ searchInputRef }) => {
           </div>
         </div>
 
-        <div className='w-full h-[13rem] overflow-x-auto scroll-smooth ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
-          <div className='w-[200%] flex flex-row gap-2'>
+        <div className='w-[80vw] h-[13rem] overflow-x-auto scroll-smooth ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
+          <div className='w-max flex flex-row gap-2'>
             { carouselList.length === 0  ? <ShimerCarousel/> :
             carouselList.map((carousel)=>{
             return(

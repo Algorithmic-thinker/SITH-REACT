@@ -7,7 +7,7 @@ const ErrorPage = ()=>{
         <div className='w-[100vw] h-[100vh] bg-blue-400'>
             <div className=' border border-transparent rounded-3xl bg-blue-700 p-7 font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl'>
                 <div className='text-center'>
-                    <i class="fa-solid fa-triangle-exclamation text-5xl text-red-900"></i>
+                    <i className="fa-solid fa-triangle-exclamation text-5xl text-red-900"></i>
                 </div>
                 <div>
                     <h1 >Oops...something went wrong</h1>

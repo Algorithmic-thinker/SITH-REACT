@@ -15,3 +15,5 @@ export const createMenuUrl = (id) =>{
 }
 
 export const MOBILE_API_URL = 'https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.07480&lng=72.88560&carousel=true&third_party_vendor=1'
+
+export const MENU_IMAGE_URL = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/`;

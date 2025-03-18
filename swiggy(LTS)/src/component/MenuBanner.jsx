@@ -1,9 +1,9 @@
 
 
-const MenuBanner = ({menuName}) =>{
+const MenuBanner = ({menuName , fontSize}) =>{
     return(
         <>
-            <h1 className="text-2xl font-bold py-6">{menuName}</h1>
+            <h1 className={`${fontSize} font-bold py-6`}>{menuName}</h1>
         </>
     )
 }

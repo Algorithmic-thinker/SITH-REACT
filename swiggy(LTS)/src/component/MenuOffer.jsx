@@ -1,5 +1,7 @@
 import OfferCard from "./OfferCard";
 import { useState, useEffect } from "react";
+import ShimerCarousel from "./ShimerCarousel";
+
 const MenuOffer = ({offers}) =>{
 
     const [scroll, setScroll] = useState(0);
@@ -23,6 +25,7 @@ const MenuOffer = ({offers}) =>{
         }
     
       },[scroll]);
+
     
       const moveLeft = (e) =>{
         const scrollElement = document.getElementById("scrollbar");
@@ -46,13 +49,14 @@ const MenuOffer = ({offers}) =>{
                 </div>
             </div>
 
-            <div className='w-min h-[13rem] overflow-x-auto scroll-smooth mx-auto ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
-                <div className='w-[200%]  flex flex-row gap-5'>
+            <div className='w-[80vw] h-auto overflow-x-auto scroll-smooth mx-auto ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
+                <div className='w-max  flex flex-row gap-5'>
                     {
+                      offers.length === 0  ? <ShimerCarousel/> :
                         offers.map((offer)=>{
                         return(
                         <OfferCard
-                        {...offer}
+                        {...offer?.info}
                         key = {offer?.info?.offerIds[0]}
                         />
                         )})

@@ -12,7 +12,7 @@ const MenuDetails = ({rating, ratingNumber, costOfTwo, cuisines, areaName, deliv
                 </div>
 
                 <div>
-                    <p className="text-orange-500 underline text-sm">{cuisines === "" ? cuisines : cuisines.join(', ') }</p>
+                    <p className="text-orange-500 underline text-sm">{cuisines?.join(', ') }</p>
                 </div>
 
                 <div className="flex py-4 gap-4">
