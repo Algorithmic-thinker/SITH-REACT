@@ -6,7 +6,7 @@ const DishCard = ({name, price, rating, description, imageUrl , isVeg}) =>{
     let shownDescription = description;
 
     if(description.split(" ").length > 30){
-        shownDescription = description.split(" ").splice(0,30).join(" ");
+        shownDescription = description?.split(" ")?.splice(0,30)?.join(" ");
         descriptionFlag = true;
     }
     
