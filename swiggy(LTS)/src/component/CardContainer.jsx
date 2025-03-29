@@ -88,14 +88,14 @@ const CardContainer = ({ searchInputRef }) => {
       <div className='w-full my-5'>
 
         <div className='flex justify-between my-2'>
-          <h1 className='text-4xl font-semibold text-[#252525]'>What's on your mind?</h1>
-          <div className='flex text-4xl gap-3'>
+          <h1 className='sm:text-4xl text-2xl font-semibold text-[#252525]'>What's on your mind?</h1>
+          <div className='flex sm:text-4xl text-2xl gap-3'>
             <i className="fa-regular fa-circle-left text-gray-500 " onClick={(e) => moveLeft(e)}></i>
             <i className="fa-regular fa-circle-right text-[#252525]" onClick={(e) => moveRight(e)}></i>
           </div>
         </div>
 
-        <div className='w-[80vw] h-[13rem] overflow-x-auto scroll-smooth ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
+        <div className='sm:w-[80vw] w-[100vw] h-[13rem] overflow-x-auto scroll-smooth ' id='scrollbar' onScroll={(e)=>setScroll(e.target.scrollLeft)}>
           <div className='w-max flex flex-row gap-2'>
             { carouselList.length === 0  ? <ShimerCarousel/> :
             carouselList.map((carousel)=>{
@@ -118,7 +118,7 @@ const CardContainer = ({ searchInputRef }) => {
       
         <Searchbar searchText = {searchText} setSearchText = {setSearchText} masterList = {masterList} updateRestaurantList = {updateRestaurantList} searchInputRef={searchInputRef} />
 
-        <div className='mx-5 my-5 max-w-xl flex justify-start gap-4 flex-wrap'>
+        <div className='mx-5 my-5 max-w-[full] flex justify-start gap-4 flex-wrap'>
           <h2 className='text-2xl underline underline-offset-[0.5rem]'>Filters: </h2>
           <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525] rounded-full  p-2" onClick={handleRatting}>TOP RATED</button>
           <button className="bg-gray-100 hover:bg-gray-200 border border-[#252525]  rounded-full p-2" onClick={handleVeg}>Pure Veg</button>

@@ -4,7 +4,7 @@ const CarouselCard = ({imageId, action}) =>{
 
     return(
         <div>
-            <a href={action?.link}><img className="max-w-[10rem] h-auto" src={CAROUSEL_IMG_URL+imageId}/></a>
+            <a href={action?.link}><img className="sm:max-w-[10rem] max-w-[7rem] h-auto" src={CAROUSEL_IMG_URL+imageId}/></a>
         </div>
     )
 };
