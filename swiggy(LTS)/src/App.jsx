@@ -6,6 +6,7 @@ import Header from './component/Header'
 import Body from './component/Body'
 import Footer from './component/Footer'
 import { Outlet } from 'react-router'
+import useOnline from './utils/useOnline'
 
 function App() {
 
@@ -16,9 +17,15 @@ function App() {
     }
   };
 
+  const isOnline = useOnline();
+
 
   return (
     <div>
+      {!isOnline && <div>
+          <p className='text-white p-4 text-xl text-center bg-black '>you are Offline</p>
+          <div className="fixed top-0 h-full w-full bg-gray-400 opacity-50 z-50"></div>
+      </div>}
       <Header onButtonClick={handleButtonClick}/>
       <Outlet context={searchInputRef}/>
       <Footer/>
