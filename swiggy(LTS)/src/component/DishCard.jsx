@@ -22,7 +22,7 @@ const DishCard = ({name, price, rating, description, imageUrl , isVeg}) =>{
         }
     }
     return(
-        <div className="py-8 border-b border-gray-400 flex justify-between  w-full overflow-hidden">
+        <div className="py-8 border-b border-gray-400 md:flex justify-between  w-full overflow-hidden">
             <div className="w-9/12">
                 <div>
                     {
@@ -47,7 +47,7 @@ const DishCard = ({name, price, rating, description, imageUrl , isVeg}) =>{
                    { descriptionFlag && <button className="ps-2" onClick={(e) =>{ toggleDescription(e) }}>...more</button>}
                 </div>
             </div>
-            <div className="w-[12%] relative">
+            <div className="md:w-[12%] w-1/2 relative">
                 <img className="rounded-xl max-w-full h-auto" src={imageUrl}/>
                 <button className="absolute bottom-0 right-1/2 sm:translate-x-1/2 translate-x-1/4 sm:px-4 px-2 text-green-500 font-bold sm:text-xl border bg-white rounded-xl">ADD</button>
             </div>
